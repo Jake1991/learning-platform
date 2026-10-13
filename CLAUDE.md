@@ -1,4 +1,6 @@
-# Project: <Platform name>
+# Project: learning-platform
+@AGENTS.md
+
 Online learning platform for a small UK tutoring agency. Users: students
 (mostly under 18), parents, tutors, admin (me).
 
@@ -6,6 +8,7 @@ Online learning platform for a small UK tutoring agency. Users: students
 - Next.js (App Router, TypeScript, server components by default)
 - Supabase: auth, Postgres, storage. All access goes through Row Level Security.
 - Tailwind for styling. Deployed on Vercel.
+- Unit tests: Vitest (`src/**/*.test.{ts,tsx}`). E2E: Playwright (not installed yet).
 
 ## Commands
 - Dev: `npm run dev`
@@ -15,10 +18,10 @@ Online learning platform for a small UK tutoring agency. Users: students
 - New migration: `supabase migration new <name>` (never edit applied migrations)
 
 ## Conventions
-- Data access lives in `lib/data/`, never fetch from components directly.
+- Data access lives in `src/lib/data/`, never fetch from components directly.
 - Every new table gets RLS policies + a test proving a student can't read
   another student's data.
-- Follow existing patterns: look at `app/resources/` before building a new page.
+- Follow existing patterns: look at `src/app/resources/` before building a new page.
 - Small, reviewable commits. One feature per branch.
 
 ## Hard rules
